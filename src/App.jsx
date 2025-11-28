@@ -87,7 +87,7 @@ function App() {
     };
 
     try {
-      const res = await fetch(`${API_BASE}/storia/dailyStoria/`, {
+      const res = await fetch(`${API_BASE}/storia/dailyStoria`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
