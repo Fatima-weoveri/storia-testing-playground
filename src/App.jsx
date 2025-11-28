@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const API_BASE = "http://127.0.0.1:8000"; // change to your deployed URL later
+const API_BASE = "https://storia-ai-docker-image-bkavgfk3ha-od.a.run.app"; // change to your deployed URL later
 
 function App() {
   const [question, setQuestion] = useState(
