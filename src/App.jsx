@@ -3,15 +3,11 @@ import { useState } from "react";
 const API_BASE = "https://storia-ai-docker-image-bkavgfk3ha-od.a.run.app"; // change to your deployed URL later
 
 function App() {
-  const [question, setQuestion] = useState(
-    "What are you most grateful for today?"
-  );
+  const [question, setQuestion] = useState("");
 
-  const [answer, setAnswer] = useState(
-    "I had a calm morning walk and felt really present."
-  );
+  const [answer, setAnswer] = useState("");
 
-  const [username, setUsername] = useState("Alex");
+  const [username, setUsername] = useState("");
 
   const [availableGoals, setAvailableGoals] = useState([
     "💭 Understand my thoughts and feelings",
@@ -56,6 +52,14 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Basic required-field validation
+    if (!question.trim() || !answer.trim()) {
+      setError(
+        "Please fill in both Question and Answer. All other fields are optional."
+      );
+      return;
+    }
 
     setLoading(true);
     setError("");
@@ -229,7 +233,10 @@ function App() {
             onChange={(e) => setHistory(e.target.value)}
           />
         </div> */}
-            <button type="submit" disabled={loading}>
+            <button
+              type="submit"
+              disabled={loading || !question.trim() || !answer.trim()}
+            >
               {loading ? "Generating..." : "Generate Daily Storia Insight"}
             </button>
           </form>
