@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-const API_BASE =
-  "https://storia-ai-docker-image-697653045832.us-central1.run.app"; // change to your deployed URL later
+const API_BASE = "https://storia-ai-docker-image-bkavgfk3ha-od.a.run.app";
 
 function App() {
   const [question, setQuestion] = useState("");
