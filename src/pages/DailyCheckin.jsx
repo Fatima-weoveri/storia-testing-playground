@@ -30,15 +30,15 @@ const DailyCheckin = ({ onNavigateHome }) => {
     setError("");
 
     // Build historical entries from conversation history
-    // const historical_entries = conversationHistory.map((entry) => ({
-    //   question: entry.question,
-    //   answer: entry.answer,
-    // }));
+    const historical_entries = conversationHistory.map((entry) => ({
+      question: entry.question,
+      answer: entry.answer,
+    }));
 
     const payload = {
       question: currentQuestion,
       answer: currentAnswer,
-      //   historical_entries,
+      previous_questions: historical_entries,
     };
 
     try {
