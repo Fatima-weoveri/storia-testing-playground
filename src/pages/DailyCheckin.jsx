@@ -42,14 +42,11 @@ const DailyCheckin = ({ onNavigateHome }) => {
     };
 
     try {
-      const res = await fetch(
-        `${API_BASE}/storia/generateFollowUpQuestionNew/`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        }
-      );
+      const res = await fetch(`${API_BASE}/storia/generateFollowUpQuestion/`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
       if (!res.ok) {
         const text = await res.text();
